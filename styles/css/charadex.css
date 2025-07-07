@@ -15,19 +15,19 @@ body {
   /* ============================================================= */
   /* Primary Color
   ================================================================ */
-  --cd-primary-color: #8FB7D4;
+  --cd-primary-color: #f1be88;
   --cd-primary-text-color: #fff;
 
   /* ============================================================= */
   /* Secondary Color
   ================================================================ */
-  --cd-secondary-color: #939799;
+  --cd-secondary-color: #ddad7f;
   --cd-secondary-text-color: #fff;
 
   /* ============================================================= */
   /* Backgrounds
   ================================================================ */
-  --cd-body-background-color: #f8f8f8;
+  --cd-body-background-color: #fffef6;
   --cd-content-background-color: #ffffff;
   --cd-faded-background-color: #f8f8f8;
 
@@ -37,8 +37,8 @@ body {
   /* ============================================================= */
   /* Text
   ================================================================ */
-  --cd-body-text-color: #303030;
-  --cd-faded-text-color: #575757;
+  --cd-body-text-color: #333131;
+  --cd-faded-text-color: #5d5a59;
 
   /* ============================================================= */
   /* Borders
@@ -51,7 +51,7 @@ body {
   /* ============================================================= */
   /* Navbar
   ================================================================ */
-  --cd-navbar-background-color: #222222;
+  --cd-navbar-background-color: #2f2d2d;
   --cd-navbar-brand-color: var(--cd-primary-color);
   --cd-navbar-brand-color-hover: var(--cd-secondary-color);
   --cd-navbar-text-color: var(--cd-content-background-color);
@@ -64,6 +64,7 @@ body {
   ================================================================ */
   --cd-body-font-family: 'Montserrat', sans-serif;
   --cd-header-font-family: 'Comfortaa', sans-serif;
+  /*  'Montserrat', 'Comfortaa' */
   
   /* ============================================================= */
   /* Rarities
@@ -125,7 +126,7 @@ body {
   /* Link
   ================================================================ */
 
-  --cd-link-text-color: #4c8ebd;
+  --cd-link-text-color: #d8b66c;
   --cd-link-text-color-hover: var(--cd-secondary-color);
 
 
@@ -726,8 +727,8 @@ p:last-child {
 
 /* For the hero image in the index */
 .cd-hero-title {
-  color: var(--cd-primary-color);
-  background-color: var(--cd-faded-background-color);
+  color: #fff;
+  background-color: #f1be88;
   border-radius: var(--cd-border-radius);
   font-family: var(--cd-header-font-family);
   display: flex;

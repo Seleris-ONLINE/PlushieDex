@@ -16,7 +16,7 @@ let charadex = {};
 /* ==================================================================== */
 charadex.site = {
   title: "Plushiebees",
-  url: "https://www.plushibees.com/",
+  url: "https://plushibees.netlify.app/",
   description: `A casual ARPG hosted by Seleris.`
 }
 
