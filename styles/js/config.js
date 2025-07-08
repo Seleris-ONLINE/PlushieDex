@@ -36,6 +36,9 @@ charadex.sheet = {
     items:         "items",
     traits:        "traits",
     prompts:       "prompts",
+    companions:    "companions",
+    companionLog:  "companions log",
+    bestiary:     "bestiary",
     faq:           "faq",
     staff:         "mods",
   },
@@ -43,11 +46,12 @@ charadex.sheet = {
   options: {
 
     designTypes: ['All', 'Official Design', 'Guest Design', 'MYO Slot', 'MYO Design'],
-    statuses: ['All', 'Resell', 'Trade', 'Gift', 'Voided', 'For Sale', 'Purchased'],
+    statuses: ['All', 'Voided', 'Purchased'],
     rarity: ['All', 'Standard', 'Unusual', 'Rare', 'Epic', 'Modified'],
-    species: ['All', 'Plushibees'],
-    itemTypes: ['All', 'Currency', 'MYO Slot', 'Companion', 'Trait', 'Misc'],
-    traitTypes: ['All', 'Antennae', 'Wings', 'Buttons', 'Tails', 'Pom-Poms', 'Modifications']
+    species: ['All', 'Plushibee', 'Companion'],
+    itemTypes: ['All', 'Currency', 'MYO Slot', 'Companion', 'Trait', 'Collectible', 'Misc'],
+    traitTypes: ['All', 'Antennae', 'Wings', 'Buttons', 'Tails', 'Pom-Poms', 'Modifications'],
+    companionCategory: ['All', 'Basic', 'Event']
 
   }
 
@@ -100,6 +104,46 @@ charadex.page.items = {
     toggle: true,
     filterToggle: true,
     parameters: ['All', 'Item', 'Rarity']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+};
+
+/* Bestiary
+/* --------------------------------------------------------------- */
+charadex.page.bestiary = {
+
+  sheetPage: charadex.sheet.pages.bestiary,
+  sitePage: 'bestiary',
+  dexSelector: 'charadex',
+  profileProperty: 'item',
+
+  sort: {
+    toggle: true,
+    key: "id",
+    order: "asc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 24,
+  },
+
+  fauxFolder: {
+    toggle: true,
+    folderProperty: 'Category',
+    parameters: charadex.sheet.options.companionCategory,
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Name', 'Rarity', 'Artist']
   },
 
   prevNext: {
@@ -380,6 +424,81 @@ charadex.page.masterlist = {
 
 };
 
+/* Companions
+/* --------------------------------------------------------------- */
+charadex.page.companions = {
+
+  sheetPage: charadex.sheet.pages.companions,
+  sitePage: 'companions',
+  dexSelector: 'charadex',
+  profileProperty: 'companions',
+
+  sort: {
+    toggle: true,
+    key: "id",
+    order: "desc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Category': charadex.sheet.options.category,
+    }
+  },
+
+  fauxFolder: {
+    toggle: true,
+    folderProperty: 'Rarity',
+    parameters: charadex.sheet.options.rarity,
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'ID', 'Owner', 'Linked To...', 'Bond Level']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+  relatedData: {
+
+    [charadex.sheet.pages.companionLog]: {
+
+      sheetPage: charadex.sheet.pages.companionLog,
+      primaryProperty: 'id',
+      relatedProperty: 'id',
+      dexSelector: 'log',
+      profileProperty: 'companions',
+      profileToggle: false,
+
+      sort: {
+        toggle: true,
+        key: "timestamp",
+        order: "desc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: false,
+        amount: 12,
+      },
+
+    }
+
+  }
+
+};
+
 /* Inventory
 /* --------------------------------------------------------------- */
 charadex.page.inventory = {
@@ -501,6 +620,7 @@ charadex.page.inventory = {
   }
 
 };
+
 
 
 /* Index
