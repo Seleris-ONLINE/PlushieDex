@@ -48,9 +48,9 @@ charadex.sheet = {
     designTypes: ['All', 'Official Design', 'Guest Design', 'MYO Slot', 'MYO Design'],
     statuses: ['All', 'Voided', 'Purchased'],
     rarity: ['All', 'Standard', 'Unusual', 'Rare', 'Epic', 'Modified'],
-    species: ['All', 'Plushibee', 'Companion'],
-    itemTypes: ['All', 'Currency', 'MYO Slot', 'Companion', 'Trait', 'Collectible', 'Misc'],
-    traitTypes: ['All', 'Antennae', 'Wings', 'Buttons', 'Tails', 'Pom-Poms', 'Modifications'],
+    species: ['All', 'Plushibee'],
+    itemTypes: ['All', 'Currency', 'MYO Slot', 'Upgrade', 'Trait', 'Collectible', 'Companion', 'Misc'],
+    traitTypes: ['All', 'Antennae', 'Pom-Poms', 'Wings', 'Buttons', 'Tails', 'Modifications'],
     companionCategory: ['All', 'Basic', 'Event']
 
   }
@@ -103,7 +103,7 @@ charadex.page.items = {
   search: {
     toggle: true,
     filterToggle: true,
-    parameters: ['All', 'Item', 'Rarity']
+    parameters: ['All', 'Item', 'Rarity', 'Price']
   },
 
   prevNext: {
@@ -192,7 +192,7 @@ charadex.page.traits = {
   search: {
     toggle: true,
     filterToggle: true,
-    parameters: ['All', 'Trait', 'Rarity']
+    parameters: ['All', 'Trait', 'Rarity', 'Item']
   },
 
   prevNext: {
