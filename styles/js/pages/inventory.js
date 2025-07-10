@@ -41,8 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             profile.inventorylog,
             charadex.page.inventory.relatedData['inventory log'],
           );
-        }
-
+        }   
 
       }
     }

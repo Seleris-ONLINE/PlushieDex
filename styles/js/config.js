@@ -31,14 +31,14 @@ charadex.sheet = {
   pages: {
     masterlist:    "masterlist",
     masterlistLog: "masterlist log",
+    companions:    "companions",
+    companionLog:  "companion log",
     inventory:     "inventory",
     inventoryLog:  "inventory log",
     items:         "items",
     traits:        "traits",
     prompts:       "prompts",
-    companions:    "companions",
-    companionLog:  "companions log",
-    bestiary:     "bestiary",
+    bestiary:      "bestiary",
     faq:           "faq",
     staff:         "mods",
   },
@@ -119,7 +119,7 @@ charadex.page.bestiary = {
   sheetPage: charadex.sheet.pages.bestiary,
   sitePage: 'bestiary',
   dexSelector: 'charadex',
-  profileProperty: 'item',
+  profileProperty: 'name',
 
   sort: {
     toggle: true,
@@ -132,6 +132,13 @@ charadex.page.bestiary = {
     toggle: true,
     bottomToggle: true,
     amount: 24,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Rarity': charadex.sheet.options.rarity,
+    }
   },
 
   fauxFolder: {
@@ -431,7 +438,7 @@ charadex.page.companions = {
   sheetPage: charadex.sheet.pages.companions,
   sitePage: 'companions',
   dexSelector: 'charadex',
-  profileProperty: 'companions',
+  profileProperty: 'design',
 
   sort: {
     toggle: true,
@@ -449,20 +456,15 @@ charadex.page.companions = {
   filters: {
     toggle: true,
     parameters: {
-      'Category': charadex.sheet.options.category,
+      'Category': charadex.sheet.options.companionCategory,
+      'Rarity': charadex.sheet.options.rarity,
     }
-  },
-
-  fauxFolder: {
-    toggle: true,
-    folderProperty: 'Rarity',
-    parameters: charadex.sheet.options.rarity,
   },
 
   search: {
     toggle: true,
     filterToggle: true,
-    parameters: ['All', 'ID', 'Owner', 'Linked To...', 'Bond Level']
+    parameters: ['All', 'ID', 'Species', 'Owner', 'Bond Level']
   },
 
   prevNext: {
@@ -477,7 +479,7 @@ charadex.page.companions = {
       primaryProperty: 'id',
       relatedProperty: 'id',
       dexSelector: 'log',
-      profileProperty: 'companions',
+      profileProperty: 'design',
       profileToggle: false,
 
       sort: {
@@ -575,6 +577,19 @@ charadex.page.inventory = {
 
       sheetPage: charadex.sheet.pages.masterlist,
       sitePage: 'masterlist',
+      primaryProperty: 'username',
+      relatedProperty: 'owner',
+      dexSelector: 'designs',
+      profileProperty: 'design',
+      profileToggle: false,
+
+    },
+
+    [charadex.sheet.pages.companions]: {
+      ...charadex.page.companions, 
+
+      sheetPage: charadex.sheet.pages.companions,
+      sitePage: 'companions',
       primaryProperty: 'username',
       relatedProperty: 'owner',
       dexSelector: 'designs',
