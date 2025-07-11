@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Create the log dex
         if (charadex.tools.checkArray(listData.profileArray[0].companionLog)) {
-          let complogs = await charadex.initialize.page(
+          let logs = await charadex.initialize.page(
             listData.profileArray[0].companionLog,
             charadex.page.companions.relatedData['companion log']
           );
