@@ -45,10 +45,10 @@ charadex.sheet = {
 
   options: {
 
-    designTypes: ['All', 'Official Design', 'Guest Design', 'MYO Slot', 'MYO Design'],
+    designTypes: ['All', 'Official Design', 'Guest Design', 'MYO Design', 'MYO Slot'],
     statuses: ['All', 'Voided', 'Purchased'],
     rarity: ['All', 'Standard', 'Unusual', 'Rare', 'Epic', 'Modified'],
-    species: ['All', 'Plushibee'],
+    species: ['All', 'Plushibee', 'MYO Slot'],
     itemTypes: ['All', 'Currency', 'MYO Slot', 'Upgrade', 'Trait', 'Collectible', 'Companion', 'Misc'],
     traitTypes: ['All', 'Antennae', 'Pom-Poms', 'Wings', 'Buttons', 'Tails', 'Modifications'],
     companionCategory: ['All', 'Basic', 'Event']
@@ -380,7 +380,6 @@ charadex.page.masterlist = {
     toggle: true,
     parameters: {
       'Design Type': charadex.sheet.options.designTypes,
-      'Status': charadex.sheet.options.statuses,
       'Rarity': charadex.sheet.options.rarity,
     }
   },
