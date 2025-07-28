@@ -51,7 +51,8 @@ charadex.sheet = {
     species: ['All', 'Plushibee', 'MYO Slot'],
     itemTypes: ['All', 'Currency', 'MYO Slot', 'Upgrade', 'Trait', 'Collectible', 'Companion', 'Misc'],
     traitTypes: ['All', 'Antennae', 'Pom-Poms', 'Wings', 'Buttons', 'Tails', 'Modifications'],
-    companionCategory: ['All', 'Basic', 'Event']
+    companionCategory: ['All', 'Basic', 'Event'],
+    promptCategory: ['All', 'Permanent', 'Monthly', 'Event']
 
   }
 
@@ -239,15 +240,15 @@ charadex.page.prompts = {
   },
 
   fauxFolder: {
-    toggle: false,
-    folderProperty: '',
-    parameters: [],
+    toggle: true,
+    folderProperty: 'Category',
+    parameters: charadex.sheet.options.promptCategory,
   },
 
   search: {
     toggle: true,
-    filterToggle: false,
-    parameters: ['Title']
+    filterToggle: true,
+    parameters: ['All', 'Title', 'Description']
   },
 
   prevNext: {
