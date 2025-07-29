@@ -658,6 +658,13 @@ charadex.page.index = {
     ... charadex.page.masterlist,
     dexSelector: 'design',
     amount: 4,
+
+      sort: {
+      toggle: true,
+      key: "id",
+      order: "desc",
+      parameters: ['Plushibee']
+    },
   }
 
 };
