@@ -297,7 +297,8 @@ charadex.manageData = {
     for (let primaryEntry of primaryArray) {
       primaryEntry[scrub(secondaryPageName)] = [];
       for (let secondaryEntry of secondaryArray) {
-        let secondaryDataArray = secondaryEntry[secondaryKey].split(',');
+        if (!secondaryEntry[secondaryKey]) continue;
+        let secondaryDataArray = String(secondaryEntry[secondaryKey]).split(',');
         for (let prop of secondaryDataArray) {
           if (scrub(primaryEntry[primaryKey]) === scrub(prop)) {
             primaryEntry[scrub(secondaryPageName)].push(secondaryEntry);
@@ -305,7 +306,6 @@ charadex.manageData = {
         }
       }
     }
-
   },
 
   /* Fixes old style of inventories
