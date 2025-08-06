@@ -25,11 +25,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         entry.designBadges = entry.designBadges.join(' ');
 
-        // Make the tags pretty but NO links, just badges
-        entry.tags = entry.tags ? entry.tags.split(',') : [];
-        entry.fancytags = entry.tags.length
-          ? entry.tags.map(tag => `<span class="badge badge-secondary">${tag.trim()}</span>`).join(' ')
-          : '';
+        // Make the tags pretty and actually work <3
+        question.tags = question.tags ? question.tags.split(',') : [];
+        let fancyTagArr = [];
+        if (question.tags.length >= 1) {
+          for (let tag of question.tags) {
+            fancyTagArr.push(`<a href="${charadex.url.addUrlParameters(pageUrl, {tags: tag.trim()})}">#${tag.trim()}</a>`);
+          }
+        }
+        question.fancytags = fancyTagArr.join(' ');
 
       }
     }
