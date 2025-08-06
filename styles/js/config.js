@@ -31,6 +31,7 @@ charadex.sheet = {
   pages: {
     masterlist:    "masterlist",
     masterlistLog: "masterlist log",
+    imageGallery:  "image gallery",
     companions:    "companions",
     companionLog:  "companion log",
     inventory:     "inventory",
@@ -355,6 +356,55 @@ charadex.page.faq = {
 
 
 
+/* Image Gallery
+/* --------------------------------------------------------------- */
+charadex.page.imageGallery = {
+
+  sheetPage: charadex.sheet.pages.imageGallery,
+  sitePage: 'gallery',
+  dexSelector: 'charadex',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: false,
+    key: "id",
+    order: "asc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: false,
+    parameters: {
+      'TBA': [],
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Designs', 'Artist', 'Tags']
+  },
+
+  prevNext: {
+    toggle: false,
+  },
+
+};
+
+
+
 /* Masterlist
 /* --------------------------------------------------------------- */
 charadex.page.masterlist = {
@@ -423,6 +473,32 @@ charadex.page.masterlist = {
       pagination: {
         toggle: true,
         bottomToggle: false,
+        amount: 12,
+      },
+
+    },
+
+    [charadex.sheet.pages.imageGallery]: {
+
+      ... charadex.page.imageGallery,
+
+      sheetPage: charadex.sheet.pages.imageGallery,
+      primaryProperty: 'design',
+      relatedProperty: 'designs',
+      dexSelector: 'gallery',
+      profileProperty: 'id',
+      profileToggle: false,
+
+      sort: {
+        toggle: true,
+        key: "id",
+        order: "asc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: true,
         amount: 12,
       },
 
