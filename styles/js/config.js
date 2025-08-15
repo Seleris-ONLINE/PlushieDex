@@ -461,8 +461,8 @@ charadex.page.masterlist = {
     [charadex.sheet.pages.masterlistLog]: {
 
       sheetPage: charadex.sheet.pages.masterlistLog,
-      primaryProperty: 'id',
-      relatedProperty: 'id',
+      primaryProperty: 'design',
+      relatedProperty: 'design',
       dexSelector: 'log',
       profileProperty: 'design',
       profileToggle: false,
