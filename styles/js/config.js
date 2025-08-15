@@ -53,7 +53,9 @@ charadex.sheet = {
     itemTypes: ['All', 'Currency', 'MYO Slot', 'Upgrade', 'Trait', 'Collectible', 'Companion', 'Misc'],
     traitTypes: ['All', 'Antennae', 'Pom-Poms', 'Wings', 'Buttons', 'Tails', 'Modifications'],
     companionCategory: ['All', 'Basic', 'Event'],
-    promptCategory: ['All', 'Permanent', 'Monthly', 'Event']
+    promptCategory: ['All', 'Permanent', 'Monthly', 'Event'],
+    giftArt: ['Yes', 'Ask First', 'No'],
+    giftFics: ['Yes', 'Ask First', 'No']
 
   }
 
@@ -433,6 +435,8 @@ charadex.page.masterlist = {
       'Design Type': charadex.sheet.options.designTypes,
       'Status': charadex.sheet.options.statuses,
       'Rarity': charadex.sheet.options.rarity,
+      'Gift Art': charadex.sheet.options.giftArt,
+      'Gift Fics': charadex.sheet.options.giftFics,
     }
   },
 
