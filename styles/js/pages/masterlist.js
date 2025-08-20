@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         // Create the companions section
-        if (charadex.tools.checkArray(listData.profileArray[0].companion)) {
+        if (charadex.tools.checkArray(listData.profileArray[0].companions)) {
           let companions = await charadex.initialize.page(
             listData.profileArray[0].companions,
             charadex.page.masterlist.relatedData['companions']

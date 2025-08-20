@@ -577,13 +577,13 @@ charadex.page.masterlist = {
 
     },
   
-    [charadex.sheet.pages.bestiary]: {
-      ...charadex.page.bestiary,
+    [charadex.sheet.pages.companions]: {
+      ...charadex.page.companions,
       
-      sheetPage: charadex.sheet.pages.bestiary,
+      sheetPage: charadex.sheet.pages.companions,
       primaryProperty: 'design',     // links from the profile
-      relatedProperty: 'Companions',       
-      dexSelector: 'Companions',
+      relatedProperty: 'ownerID',       
+      dexSelector: 'companions',
       profileProperty: 'design',
       profileToggle: false,
       
