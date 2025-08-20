@@ -406,6 +406,75 @@ charadex.page.imageGallery = {
 };
 
 
+/* Companions
+/* --------------------------------------------------------------- */
+charadex.page.companions = {
+
+  sheetPage: charadex.sheet.pages.companions,
+  sitePage: 'companions',
+  dexSelector: 'charadex',
+  profileProperty: 'design',
+
+  sort: {
+    toggle: true,
+    key: "id",
+    order: "desc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Category': charadex.sheet.options.companionCategory,
+      'Rarity': charadex.sheet.options.rarity,
+    }
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'ID', 'Species', 'Owner', 'Bond Level']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+  relatedData: {
+
+    [charadex.sheet.pages.companionLog]: {
+
+      sheetPage: charadex.sheet.pages.companionLog,
+      primaryProperty: 'id',
+      relatedProperty: 'id',
+      dexSelector: 'log',
+      profileProperty: 'design',
+      profileToggle: false,
+
+      sort: {
+        toggle: true,
+        key: "timestamp",
+        order: "desc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: false,
+        amount: 12,
+      },
+
+    }
+
+  }
+
+};
 
 /* Masterlist
 /* --------------------------------------------------------------- */
@@ -506,77 +575,31 @@ charadex.page.masterlist = {
         amount: 12,
       },
 
-    }
-
-  }
-
-};
-
-/* Companions
-/* --------------------------------------------------------------- */
-charadex.page.companions = {
-
-  sheetPage: charadex.sheet.pages.companions,
-  sitePage: 'companions',
-  dexSelector: 'charadex',
-  profileProperty: 'design',
-
-  sort: {
-    toggle: true,
-    key: "id",
-    order: "desc",
-    parameters: []
-  },
-
-  pagination: {
-    toggle: true,
-    bottomToggle: true,
-    amount: 12,
-  },
-
-  filters: {
-    toggle: true,
-    parameters: {
-      'Category': charadex.sheet.options.companionCategory,
-      'Rarity': charadex.sheet.options.rarity,
-    }
-  },
-
-  search: {
-    toggle: true,
-    filterToggle: true,
-    parameters: ['All', 'ID', 'Species', 'Owner', 'Bond Level']
-  },
-
-  prevNext: {
-    toggle: true,
-  },
-
-  relatedData: {
-
-    [charadex.sheet.pages.companionLog]: {
-
-      sheetPage: charadex.sheet.pages.companionLog,
-      primaryProperty: 'id',
-      relatedProperty: 'id',
-      dexSelector: 'log',
-      profileProperty: 'design',
+    },
+  
+    [charadex.sheet.pages.bestiary]: {
+      ...charadex.page.bestiary,
+      
+      sheetPage: charadex.sheet.pages.bestiary,
+      primaryProperty: 'design',     // links from the profile
+      relatedProperty: 'Companions',       
+      dexSelector: 'Companions',
+      profileProperty: 'id',
       profileToggle: false,
-
+      
       sort: {
         toggle: true,
-        key: "timestamp",
-        order: "desc",
+        key: "id",
+        order: "asc",
         parameters: []
       },
 
-      pagination: {
-        toggle: true,
-        bottomToggle: false,
-        amount: 12,
-      },
-
-    }
+    pagination: {
+      toggle: true,
+      bottomToggle: true,
+      amount: 12,
+    },
+  }
 
   }
 
