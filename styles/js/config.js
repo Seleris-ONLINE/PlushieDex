@@ -582,9 +582,9 @@ charadex.page.masterlist = {
       
       sheetPage: charadex.sheet.pages.companions,
       primaryProperty: 'design',     // links from the profile
-      relatedProperty: 'ownerID',       
-      dexSelector: 'companions',
-      profileProperty: 'design',
+      relatedProperty: 'owner ID',       
+      dexSelector: 'companion',
+      profileProperty: 'ID',
       profileToggle: false,
       
       sort: {
