@@ -584,7 +584,7 @@ charadex.page.masterlist = {
       primaryProperty: 'design',     // links from the profile
       relatedProperty: 'Companions',       
       dexSelector: 'Companions',
-      profileProperty: 'id',
+      profileProperty: 'design',
       profileToggle: false,
       
       sort: {
@@ -597,7 +597,7 @@ charadex.page.masterlist = {
     pagination: {
       toggle: true,
       bottomToggle: true,
-      amount: 12,
+      amount: 3,
     },
   }
 

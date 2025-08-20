@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <a class="card h-100 cardlink" href="bestiary.html?profile=${companion.id}">
                   <h5 class="card-header text-center">${companion.name}</h5>
                   <div class="card-body d-flex flex-fill">
-                    <img class="image img-fluid m-auto" src="${companion.image}" oncontextmenu="return false">
+                    <img class="image img-fluid m-auto" src="${companion.imageurl}" oncontextmenu="return false">
                   </div>
-                  <p class="text-center"><strong>Bond Level:</strong> ${companion.bondlevel || "Unknown"}</p>
+                  <p class="text-center"><strong>Bond Level:</strong> ${companion.bondlevel}</p>
                 </a>
               `;
               container.appendChild(card);
