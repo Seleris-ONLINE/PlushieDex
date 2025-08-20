@@ -402,37 +402,44 @@
                 </div>
               </div>
               <hr/>
-              <div class="row no-gutters m-n2">
+              <!-- Companions -->
+              <div class="row no-gutters m-n2" id="companions-container" style="display:none;">
                 <h4 class="text-primary col-12">
                   Companions
                 </h4>
-                <!-- Companion Card -->
-                <div class="col-md-4 p-2" id="companion-item">
-                  <a class="card h-100 profilelink" href="">
-                    <h5 class="card-header text-center companionname">
-                    </h5>
-                    <div class="card-body d-flex flex-fill">
-                      <img class="image img-fluid m-auto" oncontextmenu="return false" src=""
-                      />
-                    </div>
-                    <p class="text-center">
-                      <strong>
-                        Bond Level:
-                      </strong>
-                      <span class="bondlevel">
-                      </span>
-                    </p>
-                  </a>
+                <!-- List -->
+                <div class="row no-gutters m-n2 companion-list">
                 </div>
-                <!-- Empty Slot -->
-                <div class="col-md-4 p-2">
-                  <div class="card h-100">
-                    <h5 class="card-header text-center">
-                      Empty...
-                    </h5>
-                    <div class="card-body d-flex flex-fill">
-                      <img class="image img-fluid m-auto" oncontextmenu="return false" src="https://f2.toyhou.se/file/f2-toyhou-se/images/95356650_Xt4ZHVCfZEmPxIx.png"
-                      />
+                <!-- List Item Template -->
+                <div style="display:none;">
+                  <div class="col-md-4 p-2" id="companion-item">
+                    <a class="card h-100 profilelink" href="">
+                      <h5 class="card-header text-center companionname">
+                      </h5>
+                      <div class="card-body d-flex flex-fill">
+                        <img class="image img-fluid m-auto" src="" oncontextmenu="return false">
+                      </div>
+                      <p class="text-center">
+                        <strong>
+                          Bond Level:
+                        </strong>
+                        <span class="bondlevel">
+                        </span>
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                <!-- Empty Slot Template -->
+                <div style="display:none;">
+                  <div class="col-md-4 p-2" id="companion-empty">
+                    <div class="card h-100">
+                      <h5 class="card-header text-center">
+                        Empty...
+                      </h5>
+                      <div class="card-body d-flex flex-fill">
+                        <img class="image img-fluid m-auto" src="https://f2.toyhou.se/file/f2-toyhou-se/images/95356650_Xt4ZHVCfZEmPxIx.png"
+                        oncontextmenu="return false">
+                      </div>
                     </div>
                   </div>
                 </div>
