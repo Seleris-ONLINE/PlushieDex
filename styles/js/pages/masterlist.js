@@ -27,40 +27,20 @@ document.addEventListener("DOMContentLoaded", async () => {
           );
         }
 
+        // Create the companions section
+        if (charadex.tools.checkArray(listData.profileArray[0].companion)) {
+          let companions = await charadex.initialize.page(
+            listData.profileArray[0].companions,
+            charadex.page.masterlist.relatedData['companions']
+          );
+        }
+
         // Create the image gallery
         if (charadex.tools.checkArray(listData.profileArray[0].imagegallery)) {
           let gallery = await charadex.initialize.page(
             listData.profileArray[0].imagegallery,
             charadex.page.masterlist.relatedData['image gallery']
           );
-        }
-
-        // Create the companions section
-        if (charadex.tools.checkArray(listData.profileArray[0].companions)) {
-          let companions = await charadex.initialize.page(
-            listData.profileArray[0].companions,
-            charadex.page.masterlist.relatedData['bestiary']
-          );
-
-          // Render dynamic companion cards
-          const container = document.querySelector(".companions-container");
-          if (container) {
-            container.innerHTML = ""; // clear existing
-            companions.forEach(companion => {
-              let card = document.createElement("div");
-              card.className = "col-md-4 p-2";
-              card.innerHTML = `
-                <a class="card h-100 cardlink" href="bestiary.html?profile=${companion.id}">
-                  <h5 class="card-header text-center">${companion.name}</h5>
-                  <div class="card-body d-flex flex-fill">
-                    <img class="image img-fluid m-auto" src="${companion.imageurl}" oncontextmenu="return false">
-                  </div>
-                  <p class="text-center"><strong>Bond Level:</strong> ${companion.bondlevel}</p>
-                </a>
-              `;
-              container.appendChild(card);
-            });
-          }
         }
 
       }

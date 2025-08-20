@@ -572,7 +572,7 @@ charadex.page.masterlist = {
       pagination: {
         toggle: true,
         bottomToggle: true,
-        amount: 12,
+        amount: 9,
       },
 
     },
@@ -597,7 +597,7 @@ charadex.page.masterlist = {
     pagination: {
       toggle: true,
       bottomToggle: true,
-      amount: 3,
+      amount: 6,
     },
   }
 
