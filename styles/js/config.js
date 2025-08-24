@@ -406,6 +406,54 @@ charadex.page.imageGallery = {
 };
 
 
+
+/* Awardcase
+/* --------------------------------------------------------------- */
+charadex.page.awardcase = {
+
+  sheetPage: charadex.sheet.pages.awardcase,
+  sitePage: 'awardcase',
+  dexSelector: 'charadex',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: false,
+    key: "id",
+    order: "asc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: false,
+    parameters: {}
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'ID', 'Category']
+  },
+
+  prevNext: {
+    toggle: false,
+  },
+
+};
+
+
+
 /* Companions
 /* --------------------------------------------------------------- */
 charadex.page.companions = {
@@ -431,15 +479,15 @@ charadex.page.companions = {
   filters: {
     toggle: true,
     parameters: {
-      'Category': charadex.sheet.options.companionCategory,
       'Rarity': charadex.sheet.options.rarity,
+      'Bond Level': charadex.sheet.options.bondLevel,
     }
   },
 
   search: {
     toggle: true,
     filterToggle: true,
-    parameters: ['All', 'ID', 'Species', 'Owner', 'Bond Level']
+    parameters: ['All', 'Species', 'Owner', 'bondLevel']
   },
 
   prevNext: {
@@ -577,12 +625,36 @@ charadex.page.masterlist = {
 
     },
   
+    [charadex.sheet.pages.awardcase]: {
+      ...charadex.page.awardcase,
+      
+      sheetPage: charadex.sheet.pages.awardcase,
+      primaryProperty: 'design', 
+      relatedProperty: 'designs',       
+      dexSelector: 'award',
+      profileProperty: 'ID',
+      profileToggle: false,
+      
+      sort: {
+        toggle: true,
+        key: "id",
+        order: "asc",
+        parameters: []
+      },
+
+    pagination: {
+      toggle: true,
+      bottomToggle: true,
+      amount: 3,
+    },
+  },
+  
     [charadex.sheet.pages.companions]: {
       ...charadex.page.companions,
       
       sheetPage: charadex.sheet.pages.companions,
       primaryProperty: 'design',     // links from the profile
-      relatedProperty: 'owner ID',       
+      relatedProperty: 'designs',       
       dexSelector: 'companion',
       profileProperty: 'ID',
       profileToggle: false,

@@ -200,17 +200,22 @@
         </div>
       </div>
     </div>
-    <!-- --------------------------------------------------------------------
-    <-- Footer <--------------------------------------------------------------------
-    -->
+    <!-------------------------------------------------------------------
+     Footer
+    --------------------------------------------------------------------->
     <div class="load-html" data-source="includes/footer.html" id="footer">
     </div>
-    <!-- --------------------------------------------------------------------
-    <-- Repeat Items <-- Do not remove 'display:none;' <--------------------------------------------------------------------
-    -->
+
+
+    <!------------------------------------------------------------------
+     Repeat Items
+    --------------------------------------------------------------------
+     Do not remove 'display:none;'
+    -------------------------------------------------------------------->
     <div style="display:none;">
-      <!-- Gallery Items <!-- ---------------------------------------------------------------
-      -->
+      <!----------------------------------------------------------------
+       Gallery Items
+      ------------------------------------------------------------------>
       <div class="col-lg-3 col-sm-6 p-2" id="charadex-gallery-item">
         <div class="card h-100">
           <!-- Header -->
@@ -231,8 +236,9 @@
           </div>
         </div>
       </div>
-      <!-- Gallery Profile <!-- ---------------------------------------------------------------
-      -->
+      <!----------------------------------------------------------------
+       Gallery Profile
+      ------------------------------------------------------------------>
       <div class="col-12 p-2" id="charadex-profile">
         <div class="card">
           <!-- Header -->
@@ -246,8 +252,9 @@
           <div class="cd-profile-image-container p-md-5 p-4 text-center">
             <img class="image img-fluid" src="" />
           </div>
-          <!-- Nav Tabs <!-- -----------------------------------------------------------
-          -->
+          <!----------------------------------------------------------------
+           Nav Tabs
+          ------------------------------------------------------------------>
           <hr class="my-0" />
           <ul class="nav row n-gutters m-n1 py-4 px-md-5 px-4" id="profile-tabs"
           role="tablist">
@@ -258,15 +265,15 @@
               </a>
             </li>
             <li class="col p-1 nav-item" role="presentation">
-              <a aria-controls="image-gallery" aria-selected="true" class="w-100 btn btn-primary"
-              data-toggle="tab" href="#image-gallery" id="image-gallery-tab">
-                Gallery
+              <a aria-controls="inventory" aria-selected="true" class="w-100 btn btn-primary"
+              data-toggle="tab" href="#inventory" id="inventory-tab">
+                Inventory
               </a>
             </li>
             <li class="col p-1 nav-item" role="presentation">
-              <a aria-controls="logs" aria-selected="false" class="w-100 btn btn-primary"
-              data-toggle="tab" href="#logs" id="logs-tab">
-                Logs
+              <a aria-controls="image-gallery" aria-selected="true" class="w-100 btn btn-primary"
+              data-toggle="tab" href="#image-gallery" id="image-gallery-tab">
+                Gallery
               </a>
             </li>
           </ul>
@@ -402,46 +409,173 @@
                 </div>
               </div>
               <hr/>
-              <!-- Companions -->
-              <div class="row no-gutters m-n2" id="companions-container">
-                <h4 class="text-primary col-12">
-                  Companions
-                </h4>
-                <!-- List -->
+            </div>
+            <!----------------------------------------------------------------
+             Inventory
+            ------------------------------------------------------------------>
+            <div aria-labelledby="inventory-tab" class="tab-pane fade" id="inventory" role="tabpanel"
+            tabindex="0">
+              <h4 class="text-primary">
+                Awardcase
+              </h4>
+              <div class="card bg-faded p-4" id="award-gallery">
+                <!----------------------------------------------------------------
+                 Pagination
+                ------------------------------------------------------------------>
+                <div class="award-pagination-container" style="display: none;">
+                  <hr/>
+                  <div class="nav d-flex justify-content-center my-n2">
+                    <div class="btn-prev page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-left">
+                        </i>
+                      </a>
+                    </div>
+                    <ul class="pagination award-pagination award-pagination-top justify-content-center m-0">
+                    </ul>
+                    <div class="btn-next page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-right">
+                        </i>
+                      </a>
+                    </div>
+                  </div>
+                  <hr/>
+                </div>
+                
+                <!-- List -------------------------------------------------------->
+                <div class="row no-gutters m-n2 award-list">
+                </div>
+
+                <!-- List Item --------------------------------------------------->
+                <div style="display: none;">
+                  <div class="col-md-4 p-2" id="award-gallery-item">
+                    <div class="card bg-faded">
+                      <!-- Image-->
+                      <a class="card-body cd-award-card p-2 d-flex flex-fill profilelink"
+                      href="">
+                        <img class="image img-fluid m-auto rounded" src="" />
+                      </a>
+                      <!-- Artist -->
+                      <div class="card-footer bg-faded text-right px-3 py-1 small">
+                        Artist:
+                        <a class="artist artistlink">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!----------------------------------------------------------------
+                 Pagination
+                ------------------------------------------------------------------>
+                <div class="award-pagination-container" style="display: none;">
+                  <hr/>
+                  <div class="nav d-flex justify-content-center my-n2">
+                    <div class="btn-prev page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-left">
+                        </i>
+                      </a>
+                    </div>
+                    <ul class="pagination award-pagination award-pagination-bottom justify-content-center m-0">
+                    </ul>
+                    <div class="btn-next page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-right">
+                        </i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4 class="text-primary">
+                Companions
+              </h4>
+              <div class="card bg-faded p-4" id="companion-gallery">
+                <!----------------------------------------------------------------
+                 Pagination
+                ------------------------------------------------------------------>
+                <div class="companion-pagination-container" style="display: none;">
+                  <hr/>
+                  <div class="nav d-flex justify-content-center my-n2">
+                    <div class="btn-prev page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-left">
+                        </i>
+                      </a>
+                    </div>
+                    <ul class="pagination companion-pagination companion-pagination-top justify-content-center m-0">
+                    </ul>
+                    <div class="btn-next page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-right">
+                        </i>
+                      </a>
+                    </div>
+                  </div>
+                  <hr/>
+                </div>
+                
+                <!-- List -------------------------------------------------------->
                 <div class="row no-gutters m-n2 companion-list">
                 </div>
-                Empty...
-                <!-- List Item Template -->
-                <div style="display:none;">
-                  <div class="col-md-4 p-2" id="companion-item">
-                    <a class="card h-100 profilelink" href="">
-                      <h5 class="card-header text-center companionname">
-                      </h5>
-                      <div class="card-body d-flex flex-fill">
-                        <img class="image img-fluid m-auto" src="" oncontextmenu="return false">
+
+                <!-- List Item --------------------------------------------------->
+                <div style="display: none;">
+                  <div class="col-md-4 p-2" id="companion-gallery-item">
+                    <div class="card bg-faded">
+                      <!-- Image-->
+                      <a class="card-body cd-companion-card p-2 d-flex flex-fill profilelink"
+                      href="">
+                        <img class="image img-fluid m-auto rounded" src="" />
+                      </a>
+                      <!-- Artist -->
+                      <div class="card-footer bg-faded text-right px-3 py-1 small">
+                        Artist:
+                        <a class="artist artistlink">
+                        </a>
                       </div>
-                      <p class="text-center">
-                        <strong>
-                          Bond Level:
-                        </strong>
-                        <span class="bondlevel">
-                        </span>
-                      </p>
-                    </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!----------------------------------------------------------------
+                 Pagination
+                ------------------------------------------------------------------>
+                <div class="companion-pagination-container" style="display: none;">
+                  <hr/>
+                  <div class="nav d-flex justify-content-center my-n2">
+                    <div class="btn-prev page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-left">
+                        </i>
+                      </a>
+                    </div>
+                    <ul class="pagination companion-pagination companion-pagination-bottom justify-content-center m-0">
+                    </ul>
+                    <div class="btn-next page-item">
+                      <a class="page-link">
+                        <i class="fa fa-chevron-right">
+                        </i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Image Gallery <!-- -----------------------------------------------------------
-            -->
+            <!----------------------------------------------------------------
+             Image Gallery
+            ------------------------------------------------------------------>
             <div aria-labelledby="image-gallery-tab" class="tab-pane fade" id="image-gallery"
             role="tabpanel" tabindex="0">
               <h4 class="text-primary">
                 Gallery
               </h4>
               <div id="gallery-gallery">
-                <!-- Pagination <!-- ---------------------------------------------------------------
-                -->
+                <!----------------------------------------------------------------
+                 Pagination
+                ------------------------------------------------------------------>
                 <div class="gallery-pagination-container" style="display: none;">
                   <hr/>
                   <div class="nav d-flex justify-content-center my-n2">
@@ -462,12 +596,12 @@
                   </div>
                   <hr/>
                 </div>
-                <!-- List -->
-                <!-- --------------------------------------------------------------- -->
+
+                <!-- List -------------------------------------------------------->
                 <div class="row no-gutters m-n2 gallery-list">
                 </div>
-                <!-- List Item -->
-                <!-- --------------------------------------------------------------- -->
+
+                <!-- List Item --------------------------------------------------->
                 <div style="display: none;">
                   <div class="col-md-4 p-2" id="gallery-gallery-item">
                     <div class="card bg-faded">
@@ -485,8 +619,10 @@
                     </div>
                   </div>
                 </div>
-                <!-- Pagination <!-- ---------------------------------------------------------------
-                -->
+
+                <!----------------------------------------------------------------
+                 Pagination
+                ------------------------------------------------------------------>
                 <div class="gallery-pagination-container" style="display: none;">
                   <hr/>
                   <div class="nav d-flex justify-content-center my-n2">
@@ -497,68 +633,6 @@
                       </a>
                     </div>
                     <ul class="pagination gallery-pagination gallery-pagination-bottom justify-content-center m-0">
-                    </ul>
-                    <div class="btn-next page-item">
-                      <a class="page-link">
-                        <i class="fa fa-chevron-right">
-                        </i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Logs <!-- -----------------------------------------------------------
-            -->
-            <div aria-labelledby="logs-tab" class="tab-pane fade" id="logs" role="tabpanel"
-            tabindex="0">
-              <h4 class="text-primary">
-                Transaction Log
-              </h4>
-              <div class="card bg-faded p-4" id="log-gallery">
-                <!-- List -->
-                <!-- --------------------------------------------------------------- -->
-                <div class="row no-gutters">
-                  <div class="col-md-3">
-                    <b>
-                      Timestamp
-                    </b>
-                  </div>
-                  <div class="col-md-9">
-                    <b>
-                      Reason
-                    </b>
-                  </div>
-                </div>
-                <hr/>
-                <div class="log-list">
-                </div>
-                <!-- List Item -->
-                <!-- --------------------------------------------------------------- -->
-                <div style="display: none;">
-                  <div class="row no-gutters" id="log-gallery-item">
-                    <div class="col-md-3">
-                      <span class="timestamp">
-                      </span>
-                    </div>
-                    <div class="col-md-9">
-                      <span class="reason">
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Pagination <!-- ---------------------------------------------------------------
-                -->
-                <div class="log-pagination-container" style="display: none;">
-                  <hr/>
-                  <div class="nav d-flex justify-content-center mb-n4">
-                    <div class="btn-prev page-item">
-                      <a class="page-link">
-                        <i class="fa fa-chevron-left">
-                        </i>
-                      </a>
-                    </div>
-                    <ul class="pagination log-pagination log-pagination-top justify-content-center m-0">
                     </ul>
                     <div class="btn-next page-item">
                       <a class="page-link">

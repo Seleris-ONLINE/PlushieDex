@@ -27,19 +27,27 @@ document.addEventListener("DOMContentLoaded", async () => {
           );
         }
 
-        // Create the companions section
-        if (charadex.tools.checkArray(listData.profileArray[0].companions)) {
-          let companions = await charadex.initialize.page(
-            listData.profileArray[0].companions,
-            charadex.page.masterlist.relatedData['companions']
-          );
-        }
-
         // Create the image gallery
         if (charadex.tools.checkArray(listData.profileArray[0].imagegallery)) {
           let gallery = await charadex.initialize.page(
             listData.profileArray[0].imagegallery,
             charadex.page.masterlist.relatedData['image gallery']
+          );
+        }
+
+        // Create the awarcase
+        if (charadex.tools.checkArray(listData.profileArray[0].awardcase)) {
+          let gallery = await charadex.initialize.page(
+            listData.profileArray[0].awardcase,
+            charadex.page.masterlist.relatedData['awardcase']
+          );
+        }
+
+        // Create the companions section
+        if (charadex.tools.checkArray(listData.profileArray[0].companions)) {
+          let companions = await charadex.initialize.page(
+            listData.profileArray[0].companions,
+            charadex.page.masterlist.relatedData['companion']
           );
         }
 
