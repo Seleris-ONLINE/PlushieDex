@@ -775,3 +775,12 @@ p:last-child {
   background-color: var(--cd-rarity-modified-bg);
   color: var(--cd-rarity-modified-txt);
 }
+
+/* ============================================================= */
+/* Misc
+/* ============================================================= */
+
+.bg-primary {
+  background: var(--cd-primary-color) !important;
+  color: var(--cd-primary-text-color) !important;
+}
