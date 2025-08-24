@@ -54,6 +54,7 @@ charadex.sheet = {
     traitTypes: ['All', 'Antennae', 'Pom-Poms', 'Wings', 'Buttons', 'Tails', 'Modifications'],
     companionCategory: ['All', 'Basic', 'Event'],
     promptCategory: ['All', 'Permanent', 'Monthly', 'Event'],
+    bondLevel: ['Wary (★)', 'Neutral (★★)', 'Warm (★★★)', 'Comfortable (★★★★)', 'BFFs (★★★★★)'],
     giftArt: ['Yes', 'Ask First', 'No'],
     giftFics: ['Yes', 'Ask First', 'No']
 
@@ -435,9 +436,9 @@ charadex.page.awardcase = {
   },
 
   fauxFolder: {
-    toggle: false,
-    folderProperty: '',
-    parameters: [],
+    toggle: true,
+    folderProperty: 'Category',
+    parameters: charadex.sheet.options.promptCategory,
   },
 
   search: {
@@ -482,6 +483,12 @@ charadex.page.companions = {
       'Rarity': charadex.sheet.options.rarity,
       'Bond Level': charadex.sheet.options.bondLevel,
     }
+  },
+
+  fauxFolder: {
+    toggle: true,
+    folderProperty: 'Category',
+    parameters: charadex.sheet.options.companionCategory,
   },
 
   search: {
