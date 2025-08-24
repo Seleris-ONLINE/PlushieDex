@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (charadex.tools.checkArray(listData.profileArray[0].companions)) {
           let companions = await charadex.initialize.page(
             listData.profileArray[0].companions,
-            charadex.page.masterlist.relatedData['companion']
+            charadex.page.masterlist.relatedData['companions']
           );
         }
 

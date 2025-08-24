@@ -641,8 +641,8 @@ charadex.page.masterlist = {
       sheetPage: charadex.sheet.pages.awardcase,
       primaryProperty: 'design', 
       relatedProperty: 'designs',       
-      dexSelector: 'award',
-      profileProperty: 'ID',
+      dexSelector: 'awardcase',
+      profileProperty: 'award',
       profileToggle: false,
       
       sort: {
@@ -665,8 +665,8 @@ charadex.page.masterlist = {
       sheetPage: charadex.sheet.pages.companions,
       primaryProperty: 'design',     // links from the profile
       relatedProperty: 'designs',       
-      dexSelector: 'companion',
-      profileProperty: 'ID',
+      dexSelector: 'companions',
+      profileProperty: 'design',
       profileToggle: false,
       
       sort: {

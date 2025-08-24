@@ -488,7 +488,7 @@ a:active {
 }
 
 .btn.btn-primary,
-.badge.badge-primary {
+.badge.badge-primary, .btn-header {
   color: var(--cd-button-text-color) !important;
   background-color: var(--cd-button-background-color) !important;
   border-color: var(--cd-button-border-color) !important;
