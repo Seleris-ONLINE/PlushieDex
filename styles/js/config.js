@@ -34,6 +34,7 @@ charadex.sheet = {
     imageGallery:  "image gallery",
     companions:    "companions",
     companionLog:  "companion log",
+    awardcase:     "awardcase",
     inventory:     "inventory",
     inventoryLog:  "inventory log",
     items:         "items",
@@ -415,7 +416,7 @@ charadex.page.awardcase = {
   sheetPage: charadex.sheet.pages.awardcase,
   sitePage: 'awardcase',
   dexSelector: 'charadex',
-  profileProperty: 'id',
+  profileProperty: 'award',
 
   sort: {
     toggle: false,
@@ -444,12 +445,14 @@ charadex.page.awardcase = {
   search: {
     toggle: true,
     filterToggle: true,
-    parameters: ['All', 'ID', 'Category']
+    parameters: ['All', 'Award', 'ID', 'Category']
   },
 
   prevNext: {
     toggle: false,
   },
+
+  relatedData: {}
 
 };
 

@@ -10,26 +10,25 @@ import { charadex } from '../charadex.js';
 document.addEventListener("DOMContentLoaded", async () => {
 
   let dex = await charadex.initialize.page(
-    null,
-    charadex.page.awardcase,
     null, 
-    async (listData) => {
+    charadex.page.awardcase, 
+    (arr) => {
+      for (let entry of arr) {
 
-      if (listData.type == 'profile') {
-
-        // Create the log dex
-        if (charadex.tools.checkArray(listData.profileArray[0].awardcaseLog)) {
-          let logs = await charadex.initialize.page(
-            listData.profileArray[0].awardcaseLog,
-            charadex.page.awardcase.relatedData['awardcase log']
+        // We're gonna make some badges but you dont have to use them
+        entry.designs = entry.designs.split(',');
+        entry.designBadges = [];
+        for (let design of entry.designs) {
+          entry.designBadges.push(
+            `<a class="badge badge-primary" href="${charadex.url.addUrlParameters(charadex.url.getPageUrl('masterlist'), {profile: design})}">${design.trim()}</a>`
           );
         }
+        entry.designBadges = entry.designBadges.join(' ');
 
       }
-
     }
   );
-  
+
   charadex.tools.loadPage('.softload', 500);
-  
+
 });
