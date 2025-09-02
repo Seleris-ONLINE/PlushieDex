@@ -82,9 +82,11 @@ body {
   --cd-rarity-epic-bg: rgb(143, 174, 228);
   --cd-rarity-epic-txt: var(--cd-rarity-standard-txt);
 
-  /* Legendary & Mythic */
   --cd-rarity-modified-bg: #c7c0b4;
   --cd-rarity-modified-txt: var(--cd-rarity-standard-txt);
+
+  --cd-rarity-seasonal-bg: #d994c9;
+  --cd-rarity-seasonal-txt: var(--cd-rarity-standard-txt);
 
 
   /* ============================================================= */
@@ -774,6 +776,11 @@ p:last-child {
 .badge-modified {
   background-color: var(--cd-rarity-modified-bg);
   color: var(--cd-rarity-modified-txt);
+}
+
+.badge-seasonal {
+  background-color: var(--cd-rarity-seasonal-bg);
+  color: var(--cd-rarity-seasonal-txt);
 }
 
 /* ============================================================= */

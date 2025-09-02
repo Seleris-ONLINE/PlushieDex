@@ -49,12 +49,12 @@ charadex.sheet = {
 
     designTypes: ['All', 'Official Design', 'Guest Design', 'MYO Design', 'MYO Slot'],
     statuses: ['All', 'Voided', 'Purchased'],
-    rarity: ['All', 'Standard', 'Unusual', 'Rare', 'Epic', 'Modified'],
+    rarity: ['All', 'Standard', 'Unusual', 'Rare', 'Epic', 'Modified', 'Seasonal'],
     species: ['All', 'Plushibee', 'MYO Slot'],
     itemTypes: ['All', 'Currency', 'MYO Slot', 'Upgrade', 'Trait', 'Collectible', 'Companion', 'Misc'],
     traitTypes: ['All', 'Antennae', 'Pom-Poms', 'Wings', 'Buttons', 'Tails', 'Modifications'],
-    companionCategory: ['All', 'Basic', 'Event'],
-    promptCategory: ['All', 'Permanent', 'Monthly', 'Event'],
+    companionCategory: ['All', 'Basic', 'Event', 'Seasonal'],
+    promptCategory: ['All', 'Permanent', 'Monthly', 'Event', 'Seasonal'],
     bondLevel: ['Wary (★)', 'Neutral (★★)', 'Warm (★★★)', 'Comfortable (★★★★)', 'BFFs (★★★★★)'],
     giftArt: ['Yes', 'Ask First', 'No'],
     giftFics: ['Yes', 'Ask First', 'No']
