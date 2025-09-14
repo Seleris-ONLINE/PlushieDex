@@ -56,8 +56,7 @@ charadex.sheet = {
     companionCategory: ['All', 'Basic', 'Event', 'Seasonal'],
     promptCategory: ['All', 'Permanent', 'Monthly', 'Event', 'Seasonal'],
     bondLevel: ['Wary (★)', 'Neutral (★★)', 'Warm (★★★)', 'Comfortable (★★★★)', 'BFFs (★★★★★)'],
-    giftArt: ['Yes', 'Ask First', 'No'],
-    giftFics: ['Yes', 'Ask First', 'No']
+    giftOptions: ['Yes', 'Ask First', 'No'],
 
   }
 
@@ -562,8 +561,8 @@ charadex.page.masterlist = {
       'Design Type': charadex.sheet.options.designTypes,
       'Status': charadex.sheet.options.statuses,
       'Rarity': charadex.sheet.options.rarity,
-      'Gift Art': charadex.sheet.options.giftArt,
-      'Gift Fics': charadex.sheet.options.giftFics,
+      'Gift Art': charadex.sheet.options.giftOptions,
+      'Gift Fics': charadex.sheet.options.giftOptions,
     }
   },
 
