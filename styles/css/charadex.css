@@ -15,19 +15,19 @@ body {
   /* ============================================================= */
   /* Primary Color
   ================================================================ */
-  --cd-primary-color: #f1be88;
+  --cd-primary-color: #8FB7D4;
   --cd-primary-text-color: #fff;
 
   /* ============================================================= */
   /* Secondary Color
   ================================================================ */
-  --cd-secondary-color: #ddad7f;
+  --cd-secondary-color: #939799;
   --cd-secondary-text-color: #fff;
 
   /* ============================================================= */
   /* Backgrounds
   ================================================================ */
-  --cd-body-background-color: #fffef6;
+  --cd-body-background-color: #f8f8f8;
   --cd-content-background-color: #ffffff;
   --cd-faded-background-color: #f8f8f8;
 
@@ -37,8 +37,8 @@ body {
   /* ============================================================= */
   /* Text
   ================================================================ */
-  --cd-body-text-color: #333131;
-  --cd-faded-text-color: #5d5a59;
+  --cd-body-text-color: #303030;
+  --cd-faded-text-color: #575757;
 
   /* ============================================================= */
   /* Borders
@@ -51,7 +51,7 @@ body {
   /* ============================================================= */
   /* Navbar
   ================================================================ */
-  --cd-navbar-background-color: #2f2d2d;
+  --cd-navbar-background-color: #222222;
   --cd-navbar-brand-color: var(--cd-primary-color);
   --cd-navbar-brand-color-hover: var(--cd-secondary-color);
   --cd-navbar-text-color: var(--cd-content-background-color);
@@ -64,29 +64,26 @@ body {
   ================================================================ */
   --cd-body-font-family: 'Montserrat', sans-serif;
   --cd-header-font-family: 'Comfortaa', sans-serif;
-  /*  'Montserrat', 'Comfortaa' */
   
   /* ============================================================= */
   /* Rarities
   ================================================================ */
 
-  --cd-rarity-standard-bg: #e9d558;
-  --cd-rarity-standard-txt: #ffffff;
+  --cd-rarity-common-bg: #d58353;
+  --cd-rarity-common-txt: #fcf4ed;
 
-  --cd-rarity-unusual-bg: #a9ed89;
-  --cd-rarity-unusual-txt: var(--cd-rarity-standard-txt);
+  --cd-rarity-uncommon-bg: #e0bb68;
+  --cd-rarity-uncommon-txt: var(--cd-rarity-common-txt);
   
-  --cd-rarity-rare-bg: #9ddac8;
-  --cd-rarity-rare-txt: var(--cd-rarity-standard-txt);
+  --cd-rarity-rare-bg: #97b34e;
+  --cd-rarity-rare-txt: var(--cd-rarity-common-txt);
 
-  --cd-rarity-epic-bg: rgb(143, 174, 228);
-  --cd-rarity-epic-txt: var(--cd-rarity-standard-txt);
+  --cd-rarity-veryrare-bg: #548b71;
+  --cd-rarity-veryrare-txt: var(--cd-rarity-common-txt);
 
-  --cd-rarity-modified-bg: #c7c0b4;
-  --cd-rarity-modified-txt: var(--cd-rarity-standard-txt);
-
-  --cd-rarity-seasonal-bg: #d994c9;
-  --cd-rarity-seasonal-txt: var(--cd-rarity-standard-txt);
+  /* Legendary & Mythic */
+  --cd-rarity-legendary-bg: #5a473e;
+  --cd-rarity-legendary-txt: var(--cd-rarity-common-txt);
 
 
   /* ============================================================= */
@@ -128,7 +125,7 @@ body {
   /* Link
   ================================================================ */
 
-  --cd-link-text-color: #d8b66c;
+  --cd-link-text-color: #4c8ebd;
   --cd-link-text-color-hover: var(--cd-secondary-color);
 
 
@@ -490,7 +487,7 @@ a:active {
 }
 
 .btn.btn-primary,
-.badge.badge-primary, .btn-header {
+.badge.badge-primary {
   color: var(--cd-button-text-color) !important;
   background-color: var(--cd-button-background-color) !important;
   border-color: var(--cd-button-border-color) !important;
@@ -717,9 +714,8 @@ p:last-child {
 /* Prompts */
 .cd-prompt-background {
   background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 200px;
+  background-size: cover;
+  min-height: 150px;
 }
 
 /* Makes sure your text formatting is preserved from the sheet */
@@ -730,8 +726,8 @@ p:last-child {
 
 /* For the hero image in the index */
 .cd-hero-title {
-  color: #fff;
-  background-color: #f1be88;
+  color: var(--cd-primary-color);
+  background-color: var(--cd-faded-background-color);
   border-radius: var(--cd-border-radius);
   font-family: var(--cd-header-font-family);
   display: flex;
@@ -753,14 +749,14 @@ p:last-child {
 /* Rarity
 /* ============================================================= */
 
-.badge-standard {
-  background-color: var(--cd-rarity-standard-bg);
-  color: var(--cd-rarity-standard-txt);
+.badge-common {
+  background-color: var(--cd-rarity-common-bg);
+  color: var(--cd-rarity-common-txt);
 }
 
-.badge-unusual {
-  background-color: var(--cd-rarity-unusual-bg);
-  color: var(--cd-rarity-unusual-txt);
+.badge-uncommon {
+  background-color: var(--cd-rarity-uncommon-bg);
+  color: var(--cd-rarity-uncommon-txt);
 }
 
 .badge-rare {
@@ -768,26 +764,87 @@ p:last-child {
   color: var(--cd-rarity-rare-txt);
 }
 
-.badge-epic {
-  background-color: var(--cd-rarity-epic-bg);
-  color: var(--cd-rarity-epic-txt);
+.badge-veryrare {
+  background-color: var(--cd-rarity-veryrare-bg);
+  color: var(--cd-rarity-veryrare-txt);
 }
 
-.badge-modified {
-  background-color: var(--cd-rarity-modified-bg);
-  color: var(--cd-rarity-modified-txt);
-}
-
-.badge-seasonal {
-  background-color: var(--cd-rarity-seasonal-bg);
-  color: var(--cd-rarity-seasonal-txt);
+.badge-legendary,
+.badge-mythic {
+  background-color: var(--cd-rarity-legendary-bg);
+  color: var(--cd-rarity-legendary-txt);
 }
 
 /* ============================================================= */
-/* Misc
+/* Alt Palette Mode
 /* ============================================================= */
 
-.bg-primary {
-  background: var(--cd-primary-color) !important;
-  color: var(--cd-primary-text-color) !important;
+a.darkmodetoggle {
+  position: absolute;
+  top: 1%;
+  right: 0;
+  font-size: 1.5rem;
+}
+
+body {
+  transition: 
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    background-image 0.4s ease;
+}
+
+body.alt-palette {
+  --cd-primary-color: #ff6f91;
+  --cd-primary-text-color: #1a1a1a;
+
+  --cd-secondary-color: #6a4c93;
+  --cd-secondary-text-color: #fdfdfd;
+
+  --cd-body-background-color: #1e1e2f;
+  --cd-content-background-color: #2c2c44;
+  --cd-faded-background-color: #26263a;
+
+  --cd-body-text-color: #f4f4f4;
+  --cd-faded-text-color: #b3b3b3;
+
+  --cd-border-color: rgba(255, 255, 255, 0.15);
+
+  --cd-navbar-background-color: #12121c;
+  --cd-navbar-brand-color: var(--cd-primary-color);
+  --cd-navbar-brand-color-hover: var(--cd-secondary-color);
+  --cd-navbar-text-color: var(--cd-secondary-text-color);
+  --cd-navbar-link-color: var(--cd-secondary-text-color);
+  --cd-navbar-link-color-hover: var(--cd-primary-color);
+
+  --cd-footer-background-color: var(--cd-navbar-background-color);
+  --cd-footer-text-color: #e1e1e1;
+
+  --cd-link-text-color: #ff9671;
+  --cd-link-text-color-hover: #ffd166;
+
+  --cd-button-background-color: var(--cd-link-text-color);
+  --cd-button-background-color-hover: var(--cd-link-text-color-hover);
+  --cd-button-text-color: var(--cd-primary-text-color);
+  --cd-button-text-color-hover: #000;
+
+  --cd-input-background-color: #33334d;
+  --cd-input-text-color: var(--cd-secondary-text-color);
+  --cd-input-border-color: #55557a;
+  --cd-input-border-color-hover: var(--cd-link-text-color);
+
+  --cd-rarity-common-bg: var(--cd-link-text-color);
+  --cd-rarity-common-txt: var(--cd-primary-text-color);
+
+  --cd-rarity-uncommon-bg: var(--cd-link-text-color-hover);
+  --cd-rarity-uncommon-txt: var(--cd-rarity-common-txt);
+
+  --cd-rarity-rare-bg: #06d6a0;
+  --cd-rarity-rare-txt: var(--cd-rarity-common-txt);
+
+  --cd-rarity-veryrare-bg: #118ab2;
+  --cd-rarity-veryrare-txt: #fff;
+
+  --cd-rarity-legendary-bg: #073b4c;
+  --cd-rarity-legendary-txt: var(--cd-link-text-color-hover);
 }

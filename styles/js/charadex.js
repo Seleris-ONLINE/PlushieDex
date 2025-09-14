@@ -229,3 +229,77 @@ charadex.initialize.groupGallery = async function (config, dataArray, groupBy, c
 };
 
 export { charadex };
+
+// ==============================
+// Robust palette toggle (drop at end of page / after charadex export)
+// ==============================
+(function () {
+  const TAG = '[PaletteToggle]';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log(TAG, 'script loaded');
+
+    const selectors = [
+      '#paletteToggle',
+      '#toggle',
+      '.paletteToggle',
+      '[data-palette-toggle]',
+      '[data-toggle="palette"]'
+    ];
+
+    // gather all toggles that match any selector
+    let toggles = [];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => toggles.push(el));
+    });
+    toggles = Array.from(new Set(toggles)); // unique
+
+    if (!toggles.length) {
+      console.warn(TAG, 'No toggle elements found. Expected selectors:', selectors.join(', '));
+      return;
+    }
+
+    // helper: set icon inside a toggle (if it uses <i class="fa-...">)
+    function setIcon(el, isAlt) {
+      if (!el) return;
+      const icon = el.querySelector('i');
+      if (!icon) return;
+      // prefer fa-moon / fa-sun swap (works with Font Awesome)
+      icon.classList.toggle('fa-moon', !isAlt);
+      icon.classList.toggle('fa-sun', isAlt);
+    }
+
+    function updateAllIcons(isAlt) {
+      toggles.forEach(t => setIcon(t, isAlt));
+    }
+
+    // bind listeners
+    toggles.forEach(t => {
+      t.addEventListener('click', (ev) => {
+        if (ev && typeof ev.preventDefault === 'function') ev.preventDefault(); // stop reloads
+        try {
+          const body = document.body || document.documentElement;
+          const isAlt = body.classList.toggle('alt-palette');
+          localStorage.setItem('palette', isAlt ? 'alt' : 'default');
+          updateAllIcons(isAlt);
+          console.log(TAG, 'toggled alt-palette =>', isAlt);
+        } catch (err) {
+          console.error(TAG, 'Error toggling palette:', err);
+        }
+      });
+    });
+
+    // restore saved preference
+    try {
+      const saved = localStorage.getItem('palette');
+      const body = document.body || document.documentElement;
+      const isAlt = saved === 'alt';
+      if (isAlt) body.classList.add('alt-palette');
+      else body.classList.remove('alt-palette');
+      updateAllIcons(isAlt);
+      console.log(TAG, 'restored palette from localStorage =>', saved);
+    } catch (err) {
+      console.warn(TAG, 'Could not access localStorage:', err);
+    }
+  });
+})();
