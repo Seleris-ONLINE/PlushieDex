@@ -812,10 +812,10 @@ body {
 }
 
 body.alt-palette {
-  --cd-primary-color: #ff6f91;
+  --cd-primary-color: #f1be88;
   --cd-primary-text-color: #1a1a1a;
 
-  --cd-secondary-color: #6a4c93;
+  --cd-secondary-color: #c36247;
   --cd-secondary-text-color: #fdfdfd;
 
   --cd-body-background-color: #1e1e2f;
@@ -837,8 +837,8 @@ body.alt-palette {
   --cd-footer-background-color: var(--cd-navbar-background-color);
   --cd-footer-text-color: #e1e1e1;
 
-  --cd-link-text-color: #ff9671;
-  --cd-link-text-color-hover: #ffd166;
+  --cd-link-text-color: var(--cd-primary-color);
+  --cd-link-text-color-hover: var(--cd-secondary-color);
 
   --cd-button-background-color: var(--cd-link-text-color);
   --cd-button-background-color-hover: var(--cd-link-text-color-hover);
@@ -850,18 +850,21 @@ body.alt-palette {
   --cd-input-border-color: #55557a;
   --cd-input-border-color-hover: var(--cd-link-text-color);
 
-  --cd-rarity-common-bg: var(--cd-link-text-color);
-  --cd-rarity-common-txt: var(--cd-primary-text-color);
+  --cd-rarity-standard-bg: var(--cd-link-text-color);
+  --cd-rarity-standard-txt: var(--cd-primary-text-color);
 
-  --cd-rarity-uncommon-bg: var(--cd-link-text-color-hover);
-  --cd-rarity-uncommon-txt: var(--cd-rarity-common-txt);
+  --cd-rarity-unusual-bg: var(--cd-link-text-color-hover);
+  --cd-rarity-unusual-txt: #fff;
 
   --cd-rarity-rare-bg: #06d6a0;
-  --cd-rarity-rare-txt: var(--cd-rarity-common-txt);
+  --cd-rarity-rare-txt: var(--cd-rarity-standard-txt);
 
-  --cd-rarity-veryrare-bg: #118ab2;
-  --cd-rarity-veryrare-txt: #fff;
+  --cd-rarity-epic-bg: #118ab2;
+  --cd-rarity-epic-txt: var(--cd-rarity-unusual-txt);
 
-  --cd-rarity-legendary-bg: #073b4c;
-  --cd-rarity-legendary-txt: var(--cd-link-text-color-hover);
+  --cd-rarity-modified-bg: #1d657d;
+  --cd-rarity-modified-txt: var(--cd-rarity-unusual-txt);
+
+  --cd-rarity-seasonal-bg: #9a4085;
+  --cd-rarity-seasonal-txt: var(--cd-rarity-unusual-txt);
 }
