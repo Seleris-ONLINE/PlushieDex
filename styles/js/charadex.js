@@ -37,6 +37,32 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     charadex.tools.addProfileLinks(entry, pageUrl, config.profileProperty); // Go ahead and add profile keys just in case
     if (folders) folders(entry, config.fauxFolder.folderProperty); // If folders, add folder info
     if (entry.rarity) entry.raritybadge = `<span class="badge badge-${charadex.tools.scrub(entry.rarity)}">${entry.rarity}</span>`; // Adds a rarity badge
+    if (entry.owner) {const inventoriesUrl = charadex.url.getPageUrl("inventories");entry.ownerlink = `${inventoriesUrl}?profile=${encodeURIComponent(entry.owner)}`;} // Link to owner inventory
+    if (entry.designer) {entry.designerlink = `https://toyhou.se/${charadex.tools.scrub(entry.designer)}`;} // Link to designter toyhouse
+    if (entry.artist) {entry.artistlink = `https://toyhou.se/${charadex.tools.scrub(entry.artist)}`;} // Link to artist toyhouse
+    // ==========================
+    // Trait linking (multi-trait support)
+    // ==========================
+    const traitsUrl = charadex.url.getPageUrl("traits");
+    const traitTypes = config.traitTypes || [
+      'Antennae', 'Pom-Poms', 'Wings', 'Buttons', 'Tails', 'Modifications',
+    ];
+    traitTypes.forEach(traitType => {
+      const value = entry[traitType];
+      if (!value) return;
+
+      const traits = value.split(',').map(t => t.trim()).filter(Boolean);
+
+      const htmlLinks = traits.map(trait => {
+        const clean = charadex.tools.scrub(trait);
+        console.log("TRAIT:", trait, "SCRUB:", clean);
+        const link = `${traitsUrl}?profile=${clean}`;
+        return `<a href="${link}" target="_blank">${trait}</a>`;
+      });
+
+      // avoids 'link' to not be turned into href
+      entry[`${traitType}lnk`] = htmlLinks.join(' + ');
+    });
   }
 
   // If there's related data, add it
