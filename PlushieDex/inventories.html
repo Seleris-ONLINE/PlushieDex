@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- About Your Site                                                   -->
+  <!-- ----------------------------------------------------------------- -->
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+  <title>Plushibees Inventories</title>
+  <meta name="title" content="Plushibees" />
+  <meta name="type" content="website" />
+  <meta name="url" content="https://plushibees.netlify.app/" />
+  <meta name="image" content="assets/meta.png" />
+  <meta name="description" content="A casual ARPG hosted by Seleris.">
+
+  <!-- No AI scraping directives -->
+  <meta name="robots" content="noai">
+  <meta name="robots" content="noimageai">
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Styles                                                            -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <!-- Bootstrap CSS -->
+  <!-- Using Bootstrap 4.5 because its closest to Toyhou.se's current version -->
+  <!-- https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  
+  <!-- Multiselect CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Optional Styles                                                   -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/css/charadex.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400|Comfortaa:500" rel="stylesheet">
+
+
+</head>
+
+<body id="charadex-body">
+
+  <!-- --------------------------------------------------------------------
+  <-- Header
+  <-------------------------------------------------------------------- -->
+  <div class="load-html" data-source="includes/header.html"></div>
+
+  <!-- --------------------------------------------------------------------
+  <-- Main List
+  <-------------------------------------------------------------------- -->
+  <div class="container" id="main-container">
+
+
+    <!-- Gallery Container
+    <!-- -------------------------------------------------------------- -->
+    <div id="charadex-gallery">
+
+
+      <!-- Filters
+      ----------------------------------------------------------------- -->
+      <div class="card p-md-5 p-4 mb-4">
+        <a class="nav-link darkmodetoggle" href="javascript:void(0)" id="toggle"> <i class="fas fa-fw fa-moon d-md-block d-none" aria-hidden="true"></i> <span class="d-md-none">Dark Mode</span> </a>
+
+        <h3 class="mb-0"><a href="inventories.html">Player Inventories</a></h3>
+
+        <!-- Faux Folders
+        --------------------------------------------------------------- -->
+        <div style="display:none;" id="charadex-folder-container">
+          <hr>
+          <div class="row no-gutters m-n1" id="charadex-folders"></div>
+          <!-- Buttons -->
+          <div style="display:none;">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-1" id="charadex-folder">
+              <a class="btn btn-primary d-block" href=""></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters
+        <!-- --------------------------------------------------------------- -->
+        <div style="display:none;" id="charadex-filter-container">
+          <hr>
+          <div class="row no-gutters m-n1" id="charadex-filters"></div>
+          <!-- Filters -->
+          <div style="display: none;">
+            <div class="col-md-4 col-12 p-1" id="charadex-filter">
+              <label class="px-2"></label>
+              <select class="form-control" multiple></select>
+            </div>
+          </div>
+        </div>
+        <!-- Search
+        <!-- --------------------------------------------------------------- -->
+        <div style="display:none;" id="charadex-search-container">
+          <hr>
+          <p><em>Type in your <strong>Toyhou.se Username</strong> below to view your inventory!</p></em>
+          <div class="row no-gutters m-n1">
+            <!-- Search Filter -->
+            <div class="col-md-4 col-6 p-1" style="display: none;">
+              <select class="form-control" id="charadex-search-filter"></select>
+            </div>
+            <!-- Search Bar -->
+            <div class="col d-flex p-1">
+              <input class="form-control search" type="search" placeholder="Search" id="charadex-search">
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination
+        <!-- --------------------------------------------------------------- -->
+        <div style="display: none;" class="charadex-pagination-container">
+          <hr class="mb-4 mt-4">
+          <div class="nav d-flex justify-content-center mb-n4">
+            <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+            <ul class="pagination charadex-pagination charadex-pagination-top justify-content-center m-0"></ul>
+            <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+          </div>
+        </div>
+
+        <!-- Prev & Next Topbar
+        <!-- --------------------------------------------------------------- -->
+        <div style="display: none;" id="charadex-prevnext-container">
+          <hr>
+          <div class="row no-gutters px-2 text-uppercase">
+            <div class="col-6 px-1">
+              <a id="entryPrev" href=""><i class="fas fa-chevron-left mr-2"></i><b><span></span></b></a>
+            </div>
+            <div class="col-6 px-1 text-right order-md-1">
+              <a id="entryNext" href=""><b><span></span></b><i class="fas fa-chevron-right ml-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- List Items Render Here
+      ----------------------------------------------------------------- -->
+      <div class="row no-gutters charadex-list softload m-n1"></div>
+
+      <!-- Pagination
+      <!-- --------------------------------------------------------------- -->
+      <div style="display: none;" class="charadex-pagination-container">
+        <div class="card px-3 py-1 mt-4">
+          <div class="nav d-flex justify-content-center">
+            <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+            <ul class="pagination charadex-pagination charadex-pagination-bottom justify-content-center m-0"></ul>
+            <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- --------------------------------------------------------------------
+    <-- Footer
+    <-------------------------------------------------------------------- -->
+
+  <div class="load-html" data-source="includes/footer.html"></div>
+
+
+
+  <!-- --------------------------------------------------------------------
+  <-- Repeat Items
+  <-- Do not remove 'display:none;'
+  <-------------------------------------------------------------------- -->
+  <div style="display:none;">
+
+
+    <!-- Gallery Items
+    <!-- ------------------------------------------------------------------- -->
+    <div class="col-md-4 col-sm-6 p-1" id="charadex-gallery-item">
+      <a class="card px-4 py-3 profilelink text-truncate" href="">
+        <h5 class="m-0"><span class="profileid"></span></h5>
+      </a>
+    </div>
+
+
+    <!-- Gallery Profile -->
+    <!-- ------------------------------------------------------------------- -->
+    <div class="col-12 p-2" id="charadex-profile">
+      <div class="card">
+
+        <!-- Header -->
+        <h2 class="card-header text-center p-4"><span class="text-capitalize username"></span></h2>
+        <img class="image img-thumbnail bg-faded img-fluid mx-auto  my-2" src="">
+
+        <!-- Nav Tabs -->
+        <!-- ----------------------------------------------------------- -->
+        <ul class="nav row no-gutters m-n1 py-4 px-md-5 px-4" id="profile-tabs" role="tablist">
+          <li class="col p-1 nav-item" role="presentation">
+            <a class="nav-link w-100 btn btn-primary active" id="inventory-tab" data-toggle="tab" href="#inventory" 
+            aria-controls="inventory" aria-selected="true">
+              Inventory
+            </a>
+          </li>
+          <li class="col p-1 nav-item" role="presentation">
+            <a class="nav-link w-100 btn btn-primary" id="designs-tab" data-toggle="tab" href="#designs" 
+            aria-controls="designs" aria-selected="false">
+              Designs
+            </a>
+          </li>
+          <li class="col p-1 nav-item" role="presentation">
+            <a class="nav-link w-100 btn btn-primary" id="logs-tab" data-toggle="tab" href="#logs" 
+            aria-controls="logs" aria-selected="false">
+              Logs
+            </a>
+          </li>
+          <li class="col p-1 nav-item" role="presentation">
+            <a class="link w-100 btn btn-primary">
+              ToyhouSe
+            </a>
+          </li>
+        </ul>
+        <hr class="my-0">
+
+        <!-- Main Body
+        <!-- ----------------------------------------------------------- -->
+        <div class="tab-content p-md-5 p-4">
+
+
+          <!-- Inventory
+          <!-- ----------------------------------------------------------------- -->
+          <div class="tab-pane fade active show" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
+            <div id="inventory-gallery">
+              <div class="card bg-faded p-4 mb-4">
+
+                <!-- Title
+                <!-- --------------------------------------------------------------- -->
+                <h4 class="text-primary d-flex justify-content-between align-items-center mb-0">
+                  Inventory
+                  <a href="#inventory-filter-toggle" data-toggle="collapse"><i class="fas fa-filter fa-fw"></i></a>
+                </h4>
+
+                <div class="collapse" id="inventory-filter-toggle">
+
+                  <!-- Filters
+                  <!-- --------------------------------------------------------------- -->
+                  <div style="display:none;" id="inventory-filter-container">
+                    <hr>
+                    <div class="row no-gutters m-n1" id="inventory-filters"></div>
+                    <!-- Filters -->
+                    <div style="display: none;">
+                      <div class="col-md-4 col-12 p-1" id="inventory-filter">
+                        <label class="px-2"></label>
+                        <select class="form-control" multiple></select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div> 
+
+                <!-- Search
+                <!-- --------------------------------------------------------------- -->
+                <div style="display:none;" id="inventory-search-container">
+                  <hr>
+                  <div class="row no-gutters m-n1">
+                    <!-- Search Filter -->
+                    <div class="col-md-4 col-6 p-1" style="display: none;">
+                      <select class="form-control bg-reset" id="inventory-search-filter"></select>
+                    </div>
+                    <!-- Search Bar -->
+                    <div class="col d-flex p-1">
+                      <input class="form-control bg-reset search" type="search" placeholder="Search" id="inventory-search">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div id="inventory-group"></div>
+
+            </div>
+            <div style="display:none;">
+
+              <!-- Gallery List
+              ------------------------------------------------------------------- -->
+              <div class="mt-5 inventory-list-container" id="inventory-group-list">
+                <h4 class="inventory-group-title"></h4>
+                <div class="row no-gutters m-n2 inventory-list charadex-gallery-row"></div>
+              </div>
+
+              <!-- Gallery Items
+              ------------------------------------------------------------------- -->
+              <div class="col-lg-3 col-sm-6 p-2" id="inventory-gallery-item">
+                <div class="card bg-faded h-100">
+
+                  <!-- Title/Design ID -->
+                  <div class="card-header bg-faded text-center">
+                    <h6 class="mb-0 text-primary">
+                      <a class="profileid profilelink" href=""></a>
+                    </h6>
+                  </div>
+
+                  <!-- Image -->
+                  <div class="card-body d-flex flex-fill">
+                    <img class="masterlist-image img-fluid m-auto image" src="">
+                  </div>
+
+                  <!-- Quantity -->
+                  <div class="card-footer bg-faded text-right py-1">
+                    <small>x<span class="quantity"></span></small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Designs
+          <!-- ----------------------------------------------------------------- -->
+          <div class="tab-pane fade" id="designs" role="tabpanel" aria-labelledby="designs-tab">
+            <div id="designs-gallery">
+
+              <!-- Top Card Container
+              <!-- ----------------------------------------------------------------- -->
+              <div class="card bg-faded p-4 mb-4">
+
+                <!-- Title
+                <!-- --------------------------------------------------------------- -->
+                <h4 class="text-primary d-flex justify-content-between align-items-center mb-0">
+                  Owned Designs
+                  <a href="#designs-filter-toggle" data-toggle="collapse"><i class="fas fa-filter fa-fw"></i></a>
+                </h4>
+
+                <div class="collapse" id="designs-filter-toggle">
+
+                  <!-- Filters
+                  <!-- --------------------------------------------------------------- -->
+                  <div style="display:none;" id="designs-filter-container">
+                    <hr>
+                    <div class="row no-gutters m-n1" id="designs-filters"></div>
+                    <!-- Filters -->
+                    <div style="display: none;">
+                      <div class="col-md-4 col-12 p-1" id="designs-filter">
+                        <label class="px-2"></label>
+                        <select class="form-control bg-reset" multiple></select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Search
+                <!-- --------------------------------------------------------------- -->
+                <div style="display:none;" id="designs-search-container">
+                  <hr>
+                  <div class="row no-gutters m-n1">
+                    <!-- Search Filter -->
+                    <div class="col-md-4 col-6 p-1" style="display: none;">
+                      <select class="form-control bg-reset" id="designs-search-filter"></select>
+                    </div>
+                    <!-- Search Bar -->
+                    <div class="col d-flex p-1">
+                      <input class="form-control bg-reset search" type="search" placeholder="Search" id="designs-search">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pagination
+                <!-- --------------------------------------------------------------- -->
+                <div style="display: none;" class="designs-pagination-container">
+                  <hr class="mb-4 mt-4">
+                  <div class="nav d-flex justify-content-center mb-n2">
+                    <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+                    <ul class="pagination designs-pagination designs-pagination-top justify-content-center m-0"></ul>
+                    <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+                  </div>
+                </div>
+
+                <!-- Prev & Next Topbar
+                <!-- --------------------------------------------------------------- -->
+                <div style="display: none;" id="designs-prevnext-container">
+                  <hr>
+                  <div class="row no-gutters px-2 text-uppercase">
+                    <div class="col-6 px-1">
+                      <a id="entryPrev" href=""><i class="fas fa-chevron-left mr-2"></i><b><span></span></b></a>
+                    </div>
+                    <div class="col-6 px-1 text-right order-md-1">
+                      <a id="entryNext" href=""><b><span></span></b><i class="fas fa-chevron-right ml-2"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- List Items Render Here
+              <!-- --------------------------------------------------------------- -->
+              <div class="row no-gutters designs-list m-n2"></div>
+
+              <!-- Pagination
+              <!-- --------------------------------------------------------------- -->
+              <div style="display: none;" class="designs-pagination-container">
+                <div class="card bg-faded px-3 py-1 mt-4">
+                  <div class="nav d-flex justify-content-center">
+                    <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+                    <ul class="pagination designs-pagination designs-pagination-bottom justify-content-center m-0"></ul>
+                    <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Gallery Items
+            <!-- --------------------------------------------------------------- -->
+            <div style="display:none;">
+              <div class="col-lg-3 col-sm-6 p-2" id="designs-gallery-item">
+                <a class="card bg-faded h-100 profilelink" href="">
+                  <h5 class="card-header bg-faded text-center profileid"></h5>
+                  <div class="card-body cd-gallery-card d-flex flex-fill">
+                    <img class="image img-fluid m-auto" src="">
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- Transactions
+          <!-- ----------------------------------------------------------------- -->
+          <div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab">
+            <div class="card bg-faded p-4" id="log-gallery">
+              
+              <!-- Title -->
+              <!-- --------------------------------------------------------------- -->
+              <h4 class="text-primary mb-0">Transaction Log</h4>
+              <hr>
+
+              <!-- List -->
+              <!-- --------------------------------------------------------------- -->
+              <div class="p-3">
+                <div class="row no-gutters">
+                  <div class="col-md-3"><b>Timestamp</b></div>
+                  <div class="col-md-9"><b>Reason</b></div>
+                </div>
+                <hr class="my-2 mx-n2">
+                <div class="log-list"></div>
+              </div>
+
+              <!-- List Item -->
+              <!-- --------------------------------------------------------------- -->
+              <div style="display: none;">
+                <div  id="log-gallery-item">
+                  <div class="row no-gutters">
+                    <div class="col-md-3"><span class="timestamp"></span></div>
+                    <div class="col-md-9"><span class="reason"></span></div>
+                  </div>
+                  <hr class="my-2 mx-n2">
+                </div>
+              </div>
+
+              <!-- Pagination
+              <!-- --------------------------------------------------------------- -->
+              <div style="display: none;" class="log-pagination-container">
+                <div class="nav d-flex justify-content-center mb-n2">
+                  <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
+                  <ul class="pagination log-pagination log-pagination-top justify-content-center m-0"></ul>
+                  <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- JS                                                                -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap Multiselect -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+  <!-- Charadex Script -->
+  <script src="styles/js/pages/base.js" type="module"></script>
+  <script src="styles/js/pages/inventory.js" type="module"></script>
+
+
+</body>
+
+</html>
